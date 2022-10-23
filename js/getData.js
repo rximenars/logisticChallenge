@@ -11,7 +11,6 @@ function getDireccion() {
 
     if (input.length > 0) 
     {
-        let finalres;
         fetch("./DBFinal.csv").then(res => {
             return res.text()
         }).then(data => {
@@ -19,7 +18,7 @@ function getDireccion() {
             let filteredData = result.filter(value => value.includes(input.toUpperCase()));
 
             if (filteredData.length>0){
-                let result = filteredData.map(value=>`<li onClick="changeText(${value})">`+value+"</li>")
+                let result = filteredData.map(value=>`<li onclick="changeText('${value}');">`+value+"</li>");
                 result = result.join("\n")
                 lista.innerHTML=result;
             }else {
