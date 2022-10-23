@@ -7,20 +7,37 @@
     <title>Autocomplete challenge</title>
 
     <style>
+        form{
+            width: 90vw;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+        input{
+            width: 80%;
+        }
         ul {
-
+            max-height: 20rem;
+            overflow-y: scroll;
             list-style-type: none;
-            width: 50px; 
+            width: 100%;
+        }
+        li:hover{
+            background: rgb(228, 227, 227);
+            cursor: pointer;
         }
         </style>
         
 </head>
 <body>
 <img src = "assets/CoordinadoraTop.png" alt "Coordinadora" style="width: 1700px">
-<h3>Ingresar la dirección: </h3>
 
-<form action="" method="post" autocomplete="off">
-    <p>
+
+<form  action="" method="post" autocomplete="off">
+    <h3>Ingresar la dirección: </h3>
         <label for="campo"> Buscar: </label>
         <input type="text" name= "campo" id="campo">
         <ul id="lista"> </ul>     

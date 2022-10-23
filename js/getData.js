@@ -2,6 +2,7 @@ document.getElementById("campo").addEventListener("keyup", getDireccion)
 
 const changeText = (txt) => {
     document.getElementById("campo").value = txt;
+    document.getElementById("lista").innerHTML = null;
 }
 
 function getDireccion() {
@@ -11,6 +12,7 @@ function getDireccion() {
 
     if (input.length > 0) 
     {
+        lista.style.display = 'block'
         fetch("./DBFinal.csv").then(res => {
             return res.text()
         }).then(data => {
